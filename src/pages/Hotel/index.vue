@@ -5,7 +5,7 @@
       <FormSelect class="borderB" @select="selectRoomAdult"></FormSelect>
       <input class="submit1 radius4 colorR1Bg" type="button" value="查找酒店" @click="submitFun()">
     </div>
-    <Tabbar :active="0"></Tabbar>
+    <Tabbar :active="1"></Tabbar>
   </div>
 </template>
 

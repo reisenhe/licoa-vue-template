@@ -2,11 +2,11 @@
   <div>
     <div class="itme itme_date" @click="showCalendar">
       <div class="con itme_date_l">
-        <div class="d1"><span class="s1">{{startDate.slice(5,10)}}</span><span class="s2">{{startDate.slice(0,10) | setWeekDate(langUrl)}}</span></div>
+        <div class="d1"><span class="s1">{{startDate.slice(5,10)}}</span><span class="s2">{{startDate.slice(0,10) | setWeekDate}}</span></div>
         <div class="d2 dalign border0">共<span class="numday">1</span>晚</div>
       </div>
       <div class="con itme_date_r">
-        <div class="d1"><span class="s1">{{endDate.slice(5,10)}}</span><span class="s2">{{endDate.slice(0,10) | setWeekDate(langUrl)}}</span></div>
+        <div class="d1"><span class="s1">{{endDate.slice(5,10)}}</span><span class="s2">{{endDate.slice(0,10) | setWeekDate}}</span></div>
       </div>
     </div>
     <van-calendar v-model="show" 
@@ -71,7 +71,7 @@ export default {
     }
   },
   filters:{
-    setWeekDate: function (value,lang) {
+    setWeekDate: function (value,lang = 'zh_cn') {
       if(lang == 'zh_cn'){
         return "周" + "日一二三四五六".charAt(new Date(value).getDay());
       }else{

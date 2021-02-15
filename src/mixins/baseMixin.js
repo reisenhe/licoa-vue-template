@@ -1,4 +1,3 @@
-import request from '@/utils/request'
 export const baseMixin = {
     data() {
         return {
