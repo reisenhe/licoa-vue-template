@@ -5,7 +5,7 @@
     :width="'auto'"
     :show-confirm-button="false"
     :close-on-click-overlay="closeLayer"
-    closed="closeEvent">
+    @closed="closeEvent">
     <div class="dialog-container">
       <slot></slot>
     </div>
@@ -24,7 +24,6 @@ export default {
   },
   watch: {
     show(newV) {
-      console.log('dialog, ', newV)
       this.showDialog = newV
     }
   },

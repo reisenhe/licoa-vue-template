@@ -1,7 +1,7 @@
 <template>
   <Dialog 
     :show="show"
-    @onClose="closeDialog()">
+    @onClose="closeDialog">
     <div class="login-form">
       <div class="input-bar">
         <InputBar
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import RequestApi from '@/services'
 import Dialog from '@/components/Dialog'
 import InputBar from './InputBar'
 export default {
@@ -33,26 +34,24 @@ export default {
     Dialog,
     InputBar
   },
-  props: {
-    showLogin: Boolean
-  },
   data() {
     return {
-      show: this.showLogin,
+      show: false,
       username: '',
       password: ''
     }
   },
-  watch: {
-    showLogin(newV) {
-      this.show = newV
-    }
-  },
   methods: {
-    closeDialog() {
-      console.log('close dialog')
-    },
     login() {
+      RequestApi.user.login(this.username, this.password).then(res => {
+        console.log(res)
+      })
+    },
+    showLogin() {
+      this.show = true
+    },
+    closeDialog() {
+      this.show = false
     }
   }
 }

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import RequestApi from '@/services'
 import Tabbar from '@/components/Tabbar'
 export default {
   components: {
@@ -19,10 +20,19 @@ export default {
     }
   },
   mounted() {
-    this.getTest()
+    this.onTest1()
+    this.onTest2()
   },
   methods: {
-    getTest() {
+    onTest1() {
+      RequestApi.test.sendTest().then(res => {
+        console.log(res)
+      })
+    },
+    onTest2() {
+      RequestApi.test.sendTest2().then(res => {
+        console.log(res)
+      })
     }
   }
 }

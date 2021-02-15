@@ -9,7 +9,9 @@ import Mock from '@/mock'
 
 import { baseMixin } from '@/mixins/baseMixin.js'
 
-Mock()
+if (process.env.NODE_ENV === 'development') {
+  Mock()
+}
 Vue.config.productionTip = false
 Vue.mixin(baseMixin)
 

@@ -6,11 +6,13 @@
       <input class="submit1 radius4 colorR1Bg" type="button" value="查找酒店" @click="submitFun()">
     </div>
     <Tabbar :active="1"></Tabbar>
+    <Login ref="Login"></Login>
   </div>
 </template>
 
 <script>
 import Tabbar from '@/components/Tabbar'
+import Login from '@/components/Login'
 import FormDate from './FormDate'
 import FormSelect from './FormSelect'
 import { mapGetters, mapActions } from 'vuex'
@@ -18,6 +20,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   components: {
     Tabbar,
+    Login,
     FormDate,
     FormSelect
   },
@@ -47,7 +50,7 @@ export default {
       this.adults = adults
     },
     submitFun() {
-      console.log(this.startDate, this.endDate, this.room_num, this.adults)
+      this.$refs.Login.showLogin()
     },
     ...mapActions([
       'setDateRange'
