@@ -45,6 +45,8 @@ export default {
     login() {
       RequestApi.user.login(this.username, this.password).then(res => {
         console.log(res)
+      }).catch(err => {
+        console.log(err)
       })
     },
     showLogin() {

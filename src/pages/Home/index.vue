@@ -20,20 +20,16 @@ export default {
     }
   },
   mounted() {
-    this.onTest1()
-    this.onTest2()
+    // this.onTest1()
   },
   methods: {
     onTest1() {
       RequestApi.test.sendTest().then(res => {
         console.log(res)
+      }).catch(err => {
+        console.log(err)
       })
     },
-    onTest2() {
-      RequestApi.test.sendTest2().then(res => {
-        console.log(res)
-      })
-    }
   }
 }
 </script>

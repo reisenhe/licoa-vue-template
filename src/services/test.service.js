@@ -6,7 +6,4 @@ export class TestService {
   async sendTest() {
     return this.request.post('/api/test/test')
   }
-  async sendTest2() {
-    return this.request.post('/api/test/t2')
-  }
 }
